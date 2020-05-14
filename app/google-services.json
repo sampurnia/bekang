@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "724641740439",
+    "firebase_url": "https://logindemo-974eb.firebaseio.com",
+    "project_id": "logindemo-974eb",
+    "storage_bucket": "logindemo-974eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724641740439:android:89d41e2397e0cba0a15bd2",
+        "android_client_info": {
+          "package_name": "com.example.bekang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724641740439-n15eciso88dr3jju7sgf89ruon789i9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVCEZQGsVovOXalMk8baDIbEqB1bcCcRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724641740439-n15eciso88dr3jju7sgf89ruon789i9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
