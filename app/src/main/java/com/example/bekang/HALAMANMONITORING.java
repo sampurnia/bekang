@@ -73,7 +73,7 @@ public class HALAMANMONITORING extends AppCompatActivity {
     }
 
     private void Navigation() {
-        Intent intent = new Intent(HALAMANMONITORING.this, MapsActivity.class);
+        Intent intent = new Intent(HALAMANMONITORING.this, MAPBOX.class);
         startActivity(intent);
         finish();
     }

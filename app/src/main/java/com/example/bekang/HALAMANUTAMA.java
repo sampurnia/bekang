@@ -48,7 +48,7 @@ public class HALAMANUTAMA extends AppCompatActivity {
     }
 
     private void Navigation() {
-        Intent intent = new Intent(HALAMANUTAMA.this, MapsActivity.class);
+        Intent intent = new Intent(HALAMANUTAMA.this, MAPBOX.class);
         startActivity(intent);
         finish();
     }
