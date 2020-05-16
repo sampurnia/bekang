@@ -2,5 +2,7 @@
     <string name="app_name">BEKANG</string>
     <string name="button">Button</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="user_location_permission_explanation">This app needs location permissions in order to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+    <string name="access_token">pk.eyJ1Ijoic2FtcHVybmlhIiwiYSI6ImNrYTZjcGFpZjA2dzUzMG13NGNxdHVldGEifQ.hJkKxmZcvSZisv4N4PvHLg</string>
 </resources>

@@ -15,8 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MAPBOX">
-        </activity>
         <activity android:name=".HALAMANMONITORING" />
         <activity
             android:name=".halamanawal"
@@ -39,7 +37,8 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".HALAMANUTAMA"
-            android:label="Home" />
+            android:label="Home" >
+        </activity>
         <activity
             android:name=".HALAMANINFO"
             android:label="Info" />

@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="-6.937586"
+        mapbox:mapbox_cameraTargetLng="107.759331"
+        mapbox:mapbox_cameraZoom="13"
+        mapbox:mapbox_cameraBearing="-10"
+        mapbox:mapbox_cameraTilt="50.25"
+        mapbox:mapbox_cameraZoomMax="18"
+        mapbox:mapbox_cameraZoomMin="1"/>
+
+</FrameLayout>
