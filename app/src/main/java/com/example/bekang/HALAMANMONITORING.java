@@ -10,7 +10,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.example.bekang.firebaseauth.HALAMANLOGIN;
 import com.google.firebase.auth.FirebaseAuth;
+
+/*
+TOLONG DONG INI DIJADIIN FRAGMENT TIAP TRUCK
+COBAIN 4 DULU AJA GAES
+ */
+
+
 
 public class HALAMANMONITORING extends AppCompatActivity {
     ImageView imageView;

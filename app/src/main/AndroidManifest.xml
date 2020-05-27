@@ -16,31 +16,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity
+            android:name=".HALAMANMONITORING"
+            android:label="Monitoring" />
+        <activity
+            android:name=".launch.halamanawal"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HALAMANMONITORING" />
+        <activity android:name=".launch.HALAMANKEDUA" />
         <activity
-            android:name=".halamanawal"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
-        <activity android:name=".HALAMANKEDUA" />
-        <activity
-            android:name=".HALAMANLOGIN"
+            android:name=".firebaseauth.HALAMANLOGIN"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".HALAMANDAFTAR"
+            android:name=".firebaseauth.HALAMANDAFTAR"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".HALAMANPASSWORD"
+            android:name=".firebaseauth.HALAMANPASSWORD"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".HALAMANUTAMA"
-            android:label="Home"></activity>
+            android:label="Home" />
         <activity
             android:name=".HALAMANINFO"
             android:label="Info" />

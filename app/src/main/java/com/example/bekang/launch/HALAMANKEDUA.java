@@ -1,4 +1,4 @@
-package com.example.bekang;
+package com.example.bekang.launch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.bekang.firebaseauth.HALAMANLOGIN;
+import com.example.bekang.R;
 
 public class HALAMANKEDUA extends AppCompatActivity {
     private int SLEEP_TIMER = 3;

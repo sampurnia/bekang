@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.bekang.firebaseauth.HALAMANLOGIN;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HALAMANINFO extends AppCompatActivity {

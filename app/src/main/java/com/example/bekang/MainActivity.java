@@ -1,82 +1,70 @@
 package com.example.bekang;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
-import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.widget.Toolbar;
 
-import com.example.bekang.Tab.MyAdapter;
-import com.example.bekang.fragment.HelpFragment;
-import com.example.bekang.fragment.HomeFragment;
-import com.example.bekang.fragment.ListFragment;
+import com.example.bekang.adapter.PageAdapter;
+import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+/*
+TOLONG DONG INI DIJADIIN FRAGMENT TIAP TRUCK
+COBAIN 4 DULU AJA GAES
+jadi konsepnya dari halaman status diarahkan kesini abis itu dibawahnya diisi halaman monitoring
+ */
 
 public class MainActivity extends AppCompatActivity {
 
-    private MyAdapter tabAdapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private Toolbar toolbar;
-    private int[] tabIcon = {
-            R.drawable.ic_home_black_24dp,
-            R.drawable.ic_notifications_black_24dp,
-            R.drawable.ic_dashboard_black_24dp,
-    };
+    private TabItem tab1,tab2,tab3,tab4;
+    private PageAdapter pageAdapter;
 
-    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.main_toolbar);
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager = findViewById(R.id.viewPager);
-        setSupportActionBar(toolbar);
+        tabLayout =(TabLayout)findViewById(R.id.tabLayout);
+        tab1=(TabItem)findViewById(R.id.Tab1);
+        tab2=(TabItem)findViewById(R.id.Tab2);
+        tab3=(TabItem)findViewById(R.id.Tab3);
+        tab4=(TabItem)findViewById(R.id.Tab4);
+        viewPager=findViewById(R.id.viewPager);
 
-        tabAdapter = new MyAdapter(getSupportFragmentManager());
-        tabAdapter.addFragment(new HomeFragment(), "Tab 1");
-        tabAdapter.addFragment(new HelpFragment(), "Tab 2");
-        tabAdapter.addFragment(new ListFragment(), "Tab 3");
-        tabAdapter.addFragment(new ListFragment(), "Tab 4");
-        tabAdapter.addFragment(new HelpFragment(), "Tab 5");
-        tabAdapter.addFragment(new HomeFragment(), "Tab 6");
+        pageAdapter=new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(pageAdapter);
 
-        viewPager.setAdapter(tabAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(tab.getPosition() == 0){
+                    pageAdapter.notifyDataSetChanged();
+                }
+                else if(tab.getPosition() == 1){
+                    pageAdapter.notifyDataSetChanged();
+                }
+                else if(tab.getPosition() == 2){
+                    pageAdapter.notifyDataSetChanged();
+                }
+                else if(tab.getPosition() == 3){
+                    pageAdapter.notifyDataSetChanged();
+                }
 
-        tabLayout.getTabAt(0).setIcon(tabIcon[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcon[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcon[2]);
-        tabLayout.getTabAt(3).setIcon(tabIcon[3]);
-        tabLayout.getTabAt(4).setIcon(tabIcon[4]);
-        tabLayout.getTabAt(5).setIcon(tabIcon[5]);
-
-        ColorStateList colors;
-        if (Build.VERSION.SDK_INT >= 23) {
-            colors = getResources().getColorStateList(R.drawable.tab_icon, getTheme());
-        }
-        else {
-            colors = getResources().getColorStateList(R.drawable.tab_icon);
-        }
-
-        for (int i = 0; i < tabLayout.getTabCount(); i++) {
-            TabLayout.Tab tab = tabLayout.getTabAt(i);
-            Drawable icon = tab.getIcon();
-
-            if (icon != null) {
-                icon = DrawableCompat.wrap(icon);
-                DrawableCompat.setTintList(icon, colors);
             }
-        }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 }
-
