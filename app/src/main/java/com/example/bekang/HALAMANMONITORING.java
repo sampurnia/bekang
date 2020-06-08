@@ -59,6 +59,28 @@ public class HALAMANMONITORING extends AppCompatActivity {
         imageView2=(ImageView) findViewById(R.id.imageView12);
         imageView2.setBackgroundResource(R.drawable.batterygreen);
         animationDrawable2 =(AnimationDrawable) imageView2.getBackground();
+
+
+        reff= FirebaseDatabase.getInstance().getReference().child("mobil1").child("sensor");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String fuel = dataSnapshot.child("fuel").getValue().toString();
+                String temp = dataSnapshot.child("temp").getValue().toString();
+                String water = dataSnapshot.child("water").getValue().toString();
+                a.setText(fuel);
+                b.setText(temp);
+                c.setText(water);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
     }
 
     @Override
