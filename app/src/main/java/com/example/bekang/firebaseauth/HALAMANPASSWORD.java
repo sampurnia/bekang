@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bekang.R;
@@ -19,6 +20,7 @@ public class HALAMANPASSWORD extends AppCompatActivity {
     private EditText passwordEmail;
     private Button resetPassword;
     private FirebaseAuth firebaseAuth;
+    private TextView userRegistration, userLogin;
 
 
     @Override
@@ -27,6 +29,8 @@ public class HALAMANPASSWORD extends AppCompatActivity {
         setContentView(R.layout.activity_halamanpassword);
         passwordEmail =(EditText)findViewById(R.id.etPasswordEmail);
         resetPassword = (Button)findViewById(R.id.btnPasswordReset);
+        userLogin = (TextView)findViewById(R.id.tvUserMasuk);
+        userRegistration = (TextView)findViewById(R.id.tvUserReg);
         firebaseAuth = FirebaseAuth.getInstance();
 
         resetPassword.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +53,25 @@ public class HALAMANPASSWORD extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        /*apabila belum memiliki akun maka klik regist dulu ke maka akan menuju ke halaman daftar*/
+        userRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HALAMANPASSWORD.this, HALAMANDAFTAR.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
+        /*apabila klik lupa password maka akan menuju ke halaman lupa password*/
+        userLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HALAMANPASSWORD.this, HALAMANLOGIN.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                finish();
             }
         });
     }

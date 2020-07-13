@@ -15,16 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HALAMANPERCOBAAN">
+        <activity android:name=".HALAMANPERCOBAAN"
+            android:label="KTAD-1">
 
         </activity>
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".HALAMANMONITORING"
-            android:label="Monitoring" />
+            android:name=".calonfragment.HALAMANMONITORING"
+            android:label="KTAD-1" />
         <activity
-            android:name=".launch.halamanawal"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:name=".launch.halamanawal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,22 +34,26 @@
         <activity android:name=".launch.HALAMANKEDUA" />
         <activity
             android:name=".firebaseauth.HALAMANLOGIN"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".firebaseauth.HALAMANDAFTAR"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".firebaseauth.HALAMANPASSWORD"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
-            android:name=".HALAMANUTAMA"
+            android:name=".calonfragment.HALAMANUTAMA"
             android:label="Home" />
         <activity
-            android:name=".HALAMANINFO"
+            android:name=".calonfragment.HALAMANINFO"
             android:label="Info" />
         <activity
-            android:name=".HALAMANSTATUS"
+            android:name=".calonfragment.HALAMANSTATUS"
             android:label="Status" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

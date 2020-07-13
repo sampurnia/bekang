@@ -11,7 +11,6 @@ import com.example.bekang.firebaseauth.HALAMANLOGIN;
 import com.example.bekang.R;
 
 public class HALAMANKEDUA extends AppCompatActivity {
-    private int SLEEP_TIMER = 3;
 
 
     @Override
@@ -28,10 +27,11 @@ public class HALAMANKEDUA extends AppCompatActivity {
 
     }
 
-private class LogoLauncher extends Thread {
+class LogoLauncher extends Thread {
     public void run (){
         try {
-            sleep(1000*SLEEP_TIMER);
+            int SLEEP_TIMER = 2;
+            sleep(500* SLEEP_TIMER);
         } catch (InterruptedException e){
             e.printStackTrace();
         }

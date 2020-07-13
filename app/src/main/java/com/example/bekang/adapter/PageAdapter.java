@@ -10,6 +10,8 @@ import com.example.bekang.fragment.tab2;
 import com.example.bekang.fragment.tab3;
 import com.example.bekang.fragment.tab4;
 
+/*page adapter untuk mengatur sliding tab fragment*/
+
 public class PageAdapter extends FragmentStatePagerAdapter {
     private int numberoftabs;
 

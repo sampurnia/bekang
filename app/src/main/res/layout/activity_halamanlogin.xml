@@ -1,131 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".firebaseauth.HALAMANLOGIN"
-    android:background="#000000">
+    android:background="#F4F3F3">
 
     <ImageView
-        android:id="@+id/ganillaputih"
-        android:layout_width="295dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginBottom="89dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ganillaputih" />
+        android:id="@+id/back"
+        android:layout_width="500dp"
+        android:layout_height="270dp"
+        android:background="#D5D5D5" />
+    <ImageView
+        android:id="@+id/itu"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#000"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"/>
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/back3"
+        android:layout_width="208dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="270dp"
+        android:background="@drawable/ic_asset_49"
+        />
+    <TextView
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41"
-        app:srcCompat="@drawable/bekang" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="321dp"
-        android:layout_height="207dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751"
-        app:srcCompat="@drawable/bgloginn" />
+        android:text="LOGIN HERE"
+        android:fontFamily="@font/orbitron"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/back"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/btnlogin"
-        android:layout_width="103dp"
-        android:layout_height="23dp"
-        android:background="@drawable/enter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:text="LOGIN"
+        android:fontFamily="@font/orbitron"
+        android:background="#F44336"
+        android:layout_below="@id/etPasword"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="110dp"
+        android:background="#555555"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/tvLogin"/>
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="274dp"
-        android:layout_height="34dp"
-        android:background="@drawable/akun"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:ems="10"
-        android:gravity="center"
         android:hint="Email"
+        android:textColor="#FFF"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnlogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.413" />
+        android:layout_below="@id/tvLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"/>
 
     <EditText
         android:id="@+id/etPasword"
-        android:layout_width="272dp"
-        android:layout_height="32dp"
-        android:background="@drawable/password"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/etName"
         android:ems="10"
-        android:gravity="center"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.341" />
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/tvInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="NO OF ATTEMP"
-        android:textColor="#DADADA"
-        android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-        app:layout_constraintVertical_bias="0.078" />
+        android:text="NO OF ATTEMP "
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:layout_below="@id/btnlogin"/>
 
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        android:text="REGIST HERE"
-        android:textColor="#F2F2F2"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfo"
-        app:layout_constraintVertical_bias="0.559" />
+        android:text="Sign Up"
+        android:textColor="#AAA"
+        android:textSize="18dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="10dp"/>
 
     <TextView
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FORGOT PASSWORD"
-        app:layout_constraintBottom_toTopOf="@+id/tvRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfo"
-        app:layout_constraintVertical_bias="0.545" />
+        android:text="Forget Password"
+        android:textColor="#AAA"
+        android:textSize="18dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="10dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#85AAAAAA"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        />
+
+</RelativeLayout>

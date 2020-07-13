@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
@@ -15,6 +16,8 @@
         mapbox:mapbox_cameraBearing="-10"
         mapbox:mapbox_cameraTilt="50.25"
         mapbox:mapbox_cameraZoomMax="18"
-        mapbox:mapbox_cameraZoomMin="1"/>
+        mapbox:mapbox_cameraZoomMin="1">
 
-</FrameLayout>
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+</RelativeLayout>

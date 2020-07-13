@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#FFFFFF">
 
-    <Button
-        android:id="@+id/Mulai"
-        android:layout_width="253dp"
-        android:layout_height="87dp"
-        android:background="@drawable/ganillaputih"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imgbhimasena"
+    android:layout_width="250dp"
+    android:layout_height="150dp"
+    android:background="@drawable/bhimasena"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgbhimasena"
+        android:layout_marginTop="150dp"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:text="Android Version 1.0"
+        />
+
+</RelativeLayout>
