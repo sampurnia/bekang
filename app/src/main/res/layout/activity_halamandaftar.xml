@@ -11,8 +11,8 @@
         android:id="@+id/back"
         android:layout_width="500dp"
         android:layout_height="270dp"
-        android:background="#D5D5D5"
-        />
+        android:background="#D5D5D5" />
+
     <ImageView
         android:id="@+id/itu"
         android:layout_width="match_parent"

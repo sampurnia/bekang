@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E8E8">
+    android:background="#CDCDCD">
 
 
 
@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/statinfo"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"/>
 
     <Button

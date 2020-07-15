@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -38,27 +39,84 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /*
-TOLONG DONG INI DIJADIIN FRAGMENT TIAP TRUCK
-COBAIN 4 DULU AJA GAES
-HALAMAN INI BERISIKAN SEMUA DATA SENSOR
+INI SEHARUSNYA DIJADIIN FRAGMENT TIAP TRUCK
+PADA HALAMAN INI BERISIKAN SEMUA DATA SENSOR
 GPS : LOKASI MOBIL
-DATA : TEMPERATURE, KETINGGIAN SILINDER, FUEL LEVEL, WATER LEVEL, PREASSURE
-NOTE : SEMUA JENIS DATA DI FIREBASE BERUPA STRING*/
+DATA : TEMPERATURE, FUEL LEVEL, WATER LEVEL, PREASSURE(SEMENTARA)
+GRAFIK : (WAKTU, ARUS)
+NOTE : SEMUA JENIS DATA DI FIREBASE BERUPA STRING
+
+PERCOBAAN GPS =
+[MASALAHNYA TERDAPAT PADA PLATFORM PENYEDIA MAPS NYA, DI FIREBASE BISA MENAMBAHKAN NILAI GEOPOINT TETEAPI
+UNTUK GET DATANYA DI TAMPILKAN KEDALAM MAPBOX BELUM DI COBA KARENA GEOPOINT TIDAK DIDAPATKAN DARI STRING(REALTIME
+DATABASE) MELAINKAN DARI CLOUD FIRESTORE](SOLUSI SEMENTARA : membuat maps custom dari mapbox jadi mengharuskan
+si satelit mengirim data ke mapbox dalam bentuk json yang berisikan data mobil serta geopointnya contoh
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "3998 Gramercy St, Columbus, Ohio 43219, United States",
+        "name": "Easton",
+        "hours": "11 a.m. to 11 p.m.",
+        "phone": "614-476-5364"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.917665,
+          40.051791
+        ],
+        "type": "Point"
+      },
+      "id": "address.11780104298749790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "714 N High St, Columbus, Ohio 43215, United States",
+        "name": "North Market",
+        "hours": "10 a.m. to 5 p.m.",
+        "phone": "614-228-9960"
+      },
+      "geometry": {
+        "coordinates": [
+          -83.00418,
+          39.971888
+        ],
+        "type": "Point"
+      },
+      "id": "address.1504101080777130"
+    }
+  "type": "FeatureCollection"
+})
+scr : https://docs.mapbox.com/help/tutorials/android-store-locator/#mapactivity
+
+PERCOBAAN GRAFIK =
+PERCOBAAN PERTAMA : MEMBUAT GRAFIK ARUS DENGAN CARA MEMASUKKAN NILAI Y NYA SAJA MELALUI EDITTEXT(BERHASIL)
+PERCOBAAN KEDUA : MEMBUAT GRAFIK ARUS DENGAN CARA GET DATA SAJA DARI FIREBASE(GAGAL)
+[MASALAHNYA ADA DI RULES FIREBASE, NILAI X DIDAPATKAN DARI NILAI WAKTU, MAKA MAU TIDAK MAU DARI SISI
+HARDWARE/SOFTWARE HARUS MEMBUAT DATA WAKTU(X) KETIKA NILAI Y(ARUS) DI DAPATKAN, KELEMAHAN KEDUA YAITU
+PENYIMPANAN FIREBASE TERBATAS, SEHINGGA DATA DIBAWAH 10 DETIK DIHARUSKAN UNTUK DIHAPUS AGAR TIDAK TERJADI
+PENUMPUKAN DATA DI FIREBASE(SUDAH DICOBA DENGAN MENGGANTI RULES MENJADI HAPUS SETIAP 10000MS)]
+
+
+*/
 
 
 public class HALAMANMONITORING extends AppCompatActivity implements PermissionsListener {
 
     public MapboxMap mapboxMap;
-    DatabaseReference reff, reffdate;
+    DatabaseReference reff, reffdate; //reffdate sebagai uji get & push data pada grafik firebase
     TextView a,b,c,d;
     int FUEL, TEMP, WATER, PRESS;
     private MapView mapView;
     private PermissionsManager permissionsManager;
     FirebaseDatabase database;
-    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); //untuk nilai x perbandingan waktu terhadapa arus
     GraphView graphView;
     LineGraphSeries series;
     private FirebaseAuth firebaseAuth;
@@ -175,6 +233,30 @@ public class HALAMANMONITORING extends AppCompatActivity implements PermissionsL
     protected void onStart() {
         super.onStart();
         mapView.onStart();
+        /* PERCOBAAN PERTAMA KETIKA DI START AUTO MEMUNCULKAN NILAI GRAFIK
+            reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                DataPoint[] dp = new DataPoint[(int)dataSnapshot.getChildrenCount()];
+                int index = 0;
+
+                for(DataSnapshot myDataSnapshot : dataSnapshot.getChildren()){
+                    PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
+                    dp[index] = new DataPoint(pointValue.getxValue(), pointValue.getyValue());
+                    Log.d("X Val",String.valueOf(pointValue.getxValue()));
+                    Log.d("Y Val",String.valueOf(pointValue.getyValue()));
+                    index++;
+                }
+                series.resetData(dp);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+    */
     }
 
     @Override
@@ -220,31 +302,70 @@ public class HALAMANMONITORING extends AppCompatActivity implements PermissionsL
         reffdate();
     }
     public void reffdate() {
-//        GraphView graphView = (GraphView) findViewById(R.id.graph);
+        /* PERCOBAAN PERTAMA MENGGUNAKAN EDIT TEXT
+        yValue = (EditText) findViewById(R.id.y_value); // belum ada di xml filenya, karena memang dihapus hanya
+                                                           sebagai percobaan
+        btn_insert = (Button) findViewById(R.id.btn_insert);// belum ada di xml filenya, karena memang dihapus hanya
+                                                           sebagai percobaan
+        graphView = (GraphView) findViewById(R.id.graph);
+
+        series = new LineGraphSeries();
+        graphView.addSeries(series);
+
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("chartTable");
+
+        setListeners();
+
+        graphView.getGridLabelRenderer().setNumHorizontalLabels(5);
+
+        graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
+            @Override
+            public String formatLabel(double value, boolean isValueX) {
+                if(isValueX) {
+                    return sdf.format(new Date((long) value));
+                } else {
+                    return super.formatLabel(value, isValueX);
+                }
+
+            }
+        });
+*/
+        // PERCOBAAN KEDUA HANYA GET DATA TANPA HARUS INPUT DATA
+        //        GraphView graphView = (GraphView) findViewById(R.id.graph);
 //        series = new LineGraphSeries();
 //        graphView.addSeries(series);
 //        reffdate= FirebaseDatabase.getInstance().getReference().child("current").child("arus");
 //        reffdate.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                String y = dataSnapshot.child("arus").getValue().toString();
-//                y = Integer.parseInt(getText().toString());
+//                 DataPoint[] dp = new DataPoint[(int)dataSnapshot.getChildrenCount()];
+//                  int index = 0;
+//            for(DataSnapshot myDataSnapshot : dataSnapshot.getChildren()){
+//                    PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
+//                    dp[index] = new DataPoint(pointValue.getxValue(), pointValue.getyValue());
+//                    Log.d("X Val",String.valueOf(pointValue.getxValue()));
+//                    Log.d("Y Val",String.valueOf(pointValue.getyValue()));
+//                    index++;
+//                }
+//                series.resetData(dp);
 //            }
 //
 //            @Override
 //            public void onCancelled(@NonNull DatabaseError databaseError) {
 //            }
 //        });
-//        long x = new Date().getTime();
-//        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-//                new DataPoint(0, 1),
+
+        //GRAFIK SEMENTARA KARENA GRAFIK YANG BERDASARKAN WAKTU MASIH BELUM BISA SET DI RULES NYA
         GraphView graph = (GraphView) findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
                 new DataPoint(0, 1),
-                new DataPoint(1, 5),
+                new DataPoint(1, 4),
                 new DataPoint(2, 3),
                 new DataPoint(3, 2),
-                new DataPoint(4, 6)
+                new DataPoint(4, 5),
+                new DataPoint(5, 3),
+                new DataPoint(6, 4)
         });
         graph.addSeries(series);
         series.setDrawBackground(true);
@@ -259,6 +380,23 @@ public class HALAMANMONITORING extends AppCompatActivity implements PermissionsL
         series.setCustomPaint(paint);
         graph.setTitleColor(0xFFC90000);//merubah warna judulnya gaes
     }
+
+  /*  PERCOBAAN KEDUA MENGGUNAKAN EDIT TEXT(INPUT DATA KE GRAFIK HANYA NILAI Y)
+  private void setListeners() {
+        btn_insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = reference.push().getKey(); // ini untuk masuk ke firebasenya
+
+                long x = new Date().getTime(); //memasukkan nilai x secara otomatis ke dalam firebase
+                int y = Integer.parseInt(yValue.getText().toString());
+
+                PointValue pointValue = new PointValue(x, y);
+
+                reference.child(id).setValue(pointValue);
+            }
+        });
+    } */
 
     private void List() {
         Intent intent = new Intent(HALAMANMONITORING.this, HALAMANSTATUS.class);
