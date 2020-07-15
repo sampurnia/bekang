@@ -360,16 +360,19 @@ public class HALAMANMONITORING extends AppCompatActivity implements PermissionsL
         GraphView graph = (GraphView) findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
                 new DataPoint(0, 1),
-                new DataPoint(1, 4),
+                new DataPoint(1, 2),
                 new DataPoint(2, 3),
                 new DataPoint(3, 2),
-                new DataPoint(4, 5),
+                new DataPoint(4, 4),
                 new DataPoint(5, 3),
-                new DataPoint(6, 4)
+                new DataPoint(6, 4),
+                new DataPoint(7, 3),
+                new DataPoint(8, 2)
+
         });
         graph.addSeries(series);
         series.setDrawBackground(true);
-        graph.setBackgroundColor(0x713F51B5);//merubah warna background grafik
+//        graph.setBackgroundColor(0x713F51B5);//merubah warna background grafik
         graph.setTitle("GENSET");
         series.setBackgroundColor(0x70F44336);//merubah background series
         graph.setCursorMode(true);//agar bisa dipencet2

@@ -4,7 +4,7 @@
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CDCDCD"
+    android:background="#F4F4F4"
     android:orientation="horizontal">
 
     <RelativeLayout
@@ -42,7 +42,7 @@
             android:layout_marginTop="45dp"
             android:fontFamily="@font/orbitron"
             android:text="99"
-            android:textColor="#03A9F4"
+            android:textColor="#000"
             android:textSize="20dp" />
 
         <TextView
@@ -56,7 +56,7 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="45dp"
             android:text="%"
-            android:textColor="#03A9F4"
+            android:textColor="#000"
             android:textSize="20dp" />
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/orbitron"
             android:text="WATER LEVEL"
-            android:textColor="#03A9F4"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tvstatwt"
@@ -81,16 +81,16 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="80dp"
             android:text="Status :"
-            android:textColor="#03A9F4"
+            android:textColor="#000"
             android:textSize="20dp" />
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_below="@id/mapView"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="45dp"
             android:layout_alignEnd="@id/progressBar"
-            android:layout_marginEnd="60dp"
-            android:background="@drawable/water"/>
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/ic_waterrrrr"/>
 
 
 
@@ -119,7 +119,7 @@
             android:layout_marginTop="45dp"
             android:fontFamily="@font/orbitron"
             android:text="99"
-            android:textColor="#8BC34A"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tvfl"
@@ -131,7 +131,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/orbitron"
             android:text="FUEL LEVEL"
-            android:textColor="#8BC34A"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tvflstat"
@@ -143,7 +143,7 @@
             android:layout_marginTop="80dp"
             android:fontFamily="@font/orbitron"
             android:text="Status :"
-            android:textColor="#8BC34A"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tv1"
@@ -156,16 +156,16 @@
             android:text="%"
             android:layout_alignTop="@id/progressBarFuel"
             android:layout_marginTop="45dp"
-            android:textColor="#8BC34A"
+            android:textColor="#000"
             android:textSize="20dp" />
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_below="@id/tvstatwt"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="35dp"
             android:layout_alignEnd="@id/progressBarFuel"
-            android:layout_marginEnd="65dp"
-            android:background="@drawable/fuelll"/>
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/ic_fuel"/>
 
 
         <ProgressBar
@@ -191,8 +191,8 @@
             android:layout_alignTop="@id/progressBarPress"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/orbitron"
-            android:text="GAS VOLUME"
-            android:textColor="#FF9800"
+            android:text="GENERATOR"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tvstatprss"
@@ -204,7 +204,7 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="80dp"
             android:text="Status :"
-            android:textColor="#FF9800"
+            android:textColor="#000"
             android:textSize="20dp" />
 
         <TextView
@@ -217,7 +217,7 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="45dp"
             android:text="99"
-            android:textColor="#FF9800"
+            android:textColor="#000"
             android:textSize="20dp" />
 
         <TextView
@@ -231,17 +231,17 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="45dp"
             android:text="%"
-            android:textColor="#FF9800"
+            android:textColor="#000"
             android:textSize="20dp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@id/progressBarFuel"
-            android:layout_marginTop="15dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/tvflstat"
+            android:layout_marginTop="35dp"
             android:layout_alignStart="@id/progressBarPress"
-            android:layout_marginStart="60dp"
-            android:background="@drawable/preasure"/>
+            android:layout_marginStart="40dp"
+            android:background="@drawable/ic_generator"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -249,7 +249,7 @@
             android:layout_below="@id/tvstatprss"
             android:layout_marginTop="63dp"
             android:layout_alignEnd="@id/progressBarTemp"
-            android:layout_marginEnd="65dp"
+            android:layout_marginEnd="60dp"
             android:background="@drawable/temp"/>
 
 
@@ -279,7 +279,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/orbitron"
             android:text="TEMPERATURE"
-            android:textColor="#F44336"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tvtempstat"
@@ -291,7 +291,7 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="80dp"
             android:text="Status :"
-            android:textColor="#F44336"
+            android:textColor="#000"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/tvTemp3"
@@ -304,7 +304,7 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="45dp"
             android:text="20"
-            android:textColor="#F44336"
+            android:textColor="#000"
             android:textSize="20dp" />
 
         <TextView
@@ -318,7 +318,7 @@
             android:fontFamily="@font/orbitron"
             android:layout_marginTop="45dp"
             android:text="°C"
-            android:textColor="#F44336"
+            android:textColor="#000"
             android:textSize="20dp" />
 
 
