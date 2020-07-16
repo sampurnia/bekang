@@ -1,32 +1,45 @@
 # Overview
-<p>Bekang, Pembekalan Angkatan, merupakan sebuah Kitchen-Truck yang memiliki Expand Cabin,
+Bekang, Pembekalan Angkatan, merupakan sebuah Kitchen-Truck yang memiliki Expand Cabin,
 Kitchen Truck ini memiliki segala jenis alat memasak dengan kapasitas memasak 200-300 porsi/3 jam,
 Kitchen Truck ini akan dilengkapi dengan Computerized Monitoring System
-sehingga kendaraan tersebut dapat termonitoring dengan jarak yang sangat jauh.</p>
-<h1><a id="user-content-ganilla-android-based-monitoring-system-ganilla" class="anchor" aria-hidden="true" href="#ganilla-android-based-monitoring-system-ganilla"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Ganilla (Android-Based Monitoring System Ganilla)</h1>
-<p>Aplikasi Android ini memiliki tujuan untuk memonitoring segala jenis kegiatan yang terjadi pada Kitchen Truck,
+sehingga kendaraan tersebut dapat termonitoring dengan jarak yang sangat jauh.
+# Ganilla(Android-Based Monitoring System Ganilla)
+Aplikasi Android ini memiliki tujuan untuk memonitoring segala jenis kegiatan yang terjadi pada Kitchen Truck,
 Aplikasi ini dibuat pada Android Studio dengan menggunakan Database Management Sistem Firebase.
-Adapun yang di monitoring pada aplikasi ini adalah :</p>
-<ol>
-<li>Location/GPS (dalam bentuk lokasi pada maps)</li>
-<li>Fuel Level (dalam bentuk data)</li>
-<li>Water Level (dalam bentuk data)</li>
-<li>Temperature (dalam bentuk data)</li>
-<li>Pressure (dalam bentuk data)</li>
-<li>Current/Arus (dalam bentuk grafik)</li>
-<li>Status (dalam bentuk list on/off/maintenance)</li>
-</ol>
-<h1><a id="user-content-screenshot" class="anchor" aria-hidden="true" href="#screenshot"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Screenshot</h1>
-<p>Berikut adalah cuplikan beberapa gambar aplikasi pada Android Q/Android 10 - Samsung A50</p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505218-29d55600-bdec-11ea-9985-eb2b8ac5e73f.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505218-29d55600-bdec-11ea-9985-eb2b8ac5e73f.jpg" alt="awal(1)" style="max-width:100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505231-4f625f80-bdec-11ea-9abe-dbb8057c9213.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505231-4f625f80-bdec-11ea-9abe-dbb8057c9213.jpg" alt="launc(1)" style="max-width:100%;"></a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505240-60ab6c00-bdec-11ea-91e3-22000dcfc19d.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505240-60ab6c00-bdec-11ea-91e3-22000dcfc19d.jpg" alt="login(1)" style="max-width:100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505239-60ab6c00-bdec-11ea-8cbb-bcc51ed1d588.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505239-60ab6c00-bdec-11ea-8cbb-bcc51ed1d588.jpg" alt="daftar(1)" style="max-width:100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505238-5f7a3f00-bdec-11ea-9131-993a26e05d33.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505238-5f7a3f00-bdec-11ea-9131-993a26e05d33.jpg" alt="pasword(1)" style="max-width:100%;"></a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505258-8a649300-bdec-11ea-81f9-58b82dc9277a.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505258-8a649300-bdec-11ea-81f9-58b82dc9277a.jpg" alt="statusoffline(1)" style="max-width:100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505259-8b95c000-bdec-11ea-94e3-ab73dafad3b0.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505259-8b95c000-bdec-11ea-94e3-ab73dafad3b0.jpg" alt="status(1)" style="max-width:100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505260-8c2e5680-bdec-11ea-9d7b-fe8658e114fb.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505260-8c2e5680-bdec-11ea-9d7b-fe8658e114fb.jpg" alt="statusmain(1)" style="max-width:100%;"></a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505287-cef02e80-bdec-11ea-8403-09ab32c18fe2.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505287-cef02e80-bdec-11ea-8403-09ab32c18fe2.jpg" alt="monitoring(1)" style="max-width:100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505289-d0215b80-bdec-11ea-80c5-d7fc7e16b222.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505289-d0215b80-bdec-11ea-80c5-d7fc7e16b222.jpg" alt="maps(1)" style="max-width:100%;"></a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/62535142/86505275-aa945200-bdec-11ea-9fdf-87deba1d3881.jpg"><img src="https://user-images.githubusercontent.com/62535142/86505275-aa945200-bdec-11ea-9fdf-87deba1d3881.jpg" alt="info(1)" style="max-width:100%;"></a></p>
-</article>
+Adapun yang di monitoring pada aplikasi ini adalah :
+1. Location/GPS (dalam bentuk lokasi pada maps)
+2. Fuel Level (dalam bentuk data)
+3. Water Level (dalam bentuk data
+4. Temperature (dalam bentuk data)
+5. Pressure (dalam bentuk data)
+6. Current/Arus (dalam bentuk grafik)
+7. Status (dalam bentuk list on/off/maintenance)
+
+# Screenshot
+Berikut adalah hasil cuplikan gambar dari handphone Android 10 (Android Q)
+
+# Launcher
+![launcher](https://user-images.githubusercontent.com/62535142/87619083-85390980-c745-11ea-9021-a7e8e0350a72.jpg)
+![launcher2](https://user-images.githubusercontent.com/62535142/87619086-879b6380-c745-11ea-9e63-09dd828fc9b2.jpg)
+
+# Login
+![loginerror](https://user-images.githubusercontent.com/62535142/87619100-8e29db00-c745-11ea-875a-f82d71a1c3db.jpg)
+![loginok](https://user-images.githubusercontent.com/62535142/87619105-8ff39e80-c745-11ea-8897-afe507090ce7.jpg)
+
+# Sign Up
+![regist](https://user-images.githubusercontent.com/62535142/87619124-a00b7e00-c745-11ea-8eb7-1e7d3bab9a72.jpg)
+
+# Reset Password
+![reset](https://user-images.githubusercontent.com/62535142/87619052-7bafa180-c745-11ea-9bf7-8d1d55407f13.jpg)
+
+# Utama/Main Menu
+![utama](https://user-images.githubusercontent.com/62535142/87619070-810cec00-c745-11ea-8355-f89e32f67171.jpg)
+![menu](https://user-images.githubusercontent.com/62535142/87619107-91bd6200-c745-11ea-9636-3e762b9476b7.jpg)
+
+# Status
+![offline](https://user-images.githubusercontent.com/62535142/87619110-97b34300-c745-11ea-90d4-4177e49a0127.jpg)
+![online](https://user-images.githubusercontent.com/62535142/87619116-9aae3380-c745-11ea-88c8-ac011cfb8578.jpg)
+![maintenance](https://user-images.githubusercontent.com/62535142/87619106-9124cb80-c745-11ea-84d2-244abc893a46.jpg)
+
+# Monitoring
+![KTAD1](https://user-images.githubusercontent.com/62535142/87619080-836f4600-c745-11ea-9257-d9e20273f40e.jpg)
